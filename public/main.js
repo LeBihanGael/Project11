@@ -7,10 +7,12 @@ const supprBtn = document.getElementById('supprBtn');
 const text = document.getElementById('text');
 const afficherUserBtn = document.getElementById('afficherUserBtn');
 const userListContainer = document.getElementById('userList');
+const mapElement = document.getElementById('Map');
 let currentUser = null;
 const changePasswordBtn = document.getElementById('changePasswordBtn');
 const changemdpBtn = document.getElementById('changemdp');
 
+mapElement.style.display = 'none';
 
 
 //fonction inscription 
@@ -58,7 +60,7 @@ function afficherEtatConnexion(user) {
     decoBtn.style.display = user ? 'block' : 'none';
     supprBtn.style.display = user && !isAdmin ? 'block' : 'none';
     changePasswordBtn.style.display = user ? 'block' : 'none';
-    map.style.display = user ? 'block' : 'none';
+    mapElement.style.display = user ? 'block' : 'none';
 
     if (user) {
         loginInput.style.display = 'none';
@@ -69,7 +71,7 @@ function afficherEtatConnexion(user) {
         supprBtn.style.display = 'block';
         text.textContent = `Bienvenue ${user.login} !`;
         changemdpBtn.style.display = 'block';
-        map.style.display = 'block';
+        mapElement.style.display = 'block';
     } else {
         loginInput.style.display = 'block';
         passwordInput.style.display = 'block';
@@ -79,7 +81,7 @@ function afficherEtatConnexion(user) {
         supprBtn.style.display = 'none';
         text.textContent = 'Bienvenue sur notre page d\'inscription';
         changemdpBtn.style.display = 'none';
-        map.style.display = 'none';
+        mapElement.style.display = 'none';
     }
 }
 
@@ -229,9 +231,11 @@ document.getElementById('changemdp').addEventListener('click', () => {
     form.style.display = form.style.display === 'none' ? 'block' : 'none';
 });
 
-const map = new L.Map('map').setView([48.8566, 2.3522], 13);
+const map = new L.Map(mapElement).setView([48.8566, 2.3522], 13);
 
 new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors',
     maxZoom: 19
 }).addTo(map);
+
+new L.marker([50.5, 30.5]).addTo(map);

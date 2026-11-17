@@ -45,8 +45,8 @@ body {
     background : linear-gradient(to bottom right, #f00707, #eeff00);
 }
 
-#map {
-    height: 400px;
+#Map {
+    height: 600px;
     width: min(100%, 900px);
     margin: 24px auto;
 }
@@ -79,21 +79,6 @@ body {
     background : linear-gradient(to bottom right, #b47d04, #b007f3);
 }
 
-#phoenixImage {
-    display: none;
-    width: 100%;
-    height: auto;
-    border-left-color: #b007f3;
-    border-top-color: blue;
-    border-right-color: red;
-    border-bottom-color: #f00707;
-    border-left-width: 5px;
-    border-left-style: solid;   
-}
-
-#surprise {
-    background : linear-gradient(to bottom right, #b47d04, #b007f3);
-}
 
 #changePasswordBtn {
     background : linear-gradient(to bottom right, #b47d04, #b007f3);
