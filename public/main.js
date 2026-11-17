@@ -10,8 +10,8 @@ const userListContainer = document.getElementById('userList');
 let currentUser = null;
 const changePasswordBtn = document.getElementById('changePasswordBtn');
 const changemdpBtn = document.getElementById('changemdp');
-const phoenixImage = document.getElementById('phoenixImage');
-const surpriseButton = document.getElementById('surprise');
+
+
 
 //fonction inscription 
 monBouton4.addEventListener('click', () => {
@@ -58,6 +58,7 @@ function afficherEtatConnexion(user) {
     decoBtn.style.display = user ? 'block' : 'none';
     supprBtn.style.display = user && !isAdmin ? 'block' : 'none';
     changePasswordBtn.style.display = user ? 'block' : 'none';
+    map.style.display = user ? 'block' : 'none';
 
     if (user) {
         loginInput.style.display = 'none';
@@ -68,7 +69,7 @@ function afficherEtatConnexion(user) {
         supprBtn.style.display = 'block';
         text.textContent = `Bienvenue ${user.login} !`;
         changemdpBtn.style.display = 'block';
-        surpriseButton.style.display = 'block';
+        map.style.display = 'block';
     } else {
         loginInput.style.display = 'block';
         passwordInput.style.display = 'block';
@@ -78,13 +79,10 @@ function afficherEtatConnexion(user) {
         supprBtn.style.display = 'none';
         text.textContent = 'Bienvenue sur notre page d\'inscription';
         changemdpBtn.style.display = 'none';
-        surpriseButton.style.display = 'none';
+        map.style.display = 'none';
     }
 }
 
-surpriseButton.addEventListener('click', () => {
-    phoenixImage.style.display = 'block';
-});
 
 // Au chargement, la session serveur décide si un utilisateur est connecté.
 window.addEventListener('load', () => {
@@ -231,3 +229,9 @@ document.getElementById('changemdp').addEventListener('click', () => {
     form.style.display = form.style.display === 'none' ? 'block' : 'none';
 });
 
+const map = new L.Map('map').setView([48.8566, 2.3522], 13);
+
+new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    maxZoom: 19
+}).addTo(map);

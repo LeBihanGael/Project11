@@ -45,6 +45,12 @@ body {
     background : linear-gradient(to bottom right, #f00707, #eeff00);
 }
 
+#map {
+    height: 400px;
+    width: min(100%, 900px);
+    margin: 24px auto;
+}
+
 #userList {
     margin-top: 20px;
     text-align: left;

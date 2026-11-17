@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
     <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
     <h1 id="text">Bienvenue sur notre page d'inscription</h1>
     <input type="text" id="loginInput" placeholder="Login">
@@ -16,16 +18,17 @@
     <button id="supprBtn">Supression du compte</button>
     <button id="afficherUserBtn">Afficher les utilisateurs</button>
     <div id="userList"></div>
-    <button id="changemdp" >Changer le mot de passe.</button>
+    <button id="changemdp">Changer le mot de passe.</button>
     <div id="changePasswordForm" style="display: none;">
         <input type="password" id="newPasswordInput" placeholder="Nouveau mot de passe">
         <input type="button" value="Changer le mot de passe" id="changePasswordBtn">
     </div>
-    <button id="surprise">surprise</button>
-    <img id="phoenixImage" src="images/perenoel.jpg" alt="Phénix">
-    
 
+    <div id="map" aria-label="Carte interactive"></div>
 
+    <link rel="stylesheet" href="/leaflet/leaflet.css">
+    <script src="/leaflet/leaflet-global.js"></script>
     <script src="main.js"></script>
 </body>
+
 </html>
